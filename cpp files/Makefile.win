@@ -1,0 +1,57 @@
+# Project: gestionar restaurante
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o item.o especiales.o menu.o orden.o pedido.o pedidomesa.o pedidodomicilio.o cuenta.o restaurante.o $(RES)
+LINKOBJ  = main.o item.o especiales.o menu.o orden.o pedido.o pedidomesa.o pedidodomicilio.o cuenta.o restaurante.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = "gestionar restaurante.exe"
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before "gestionar restaurante.exe" all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "gestionar restaurante.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+item.o: item.cpp
+	$(CPP) -c item.cpp -o item.o $(CXXFLAGS)
+
+especiales.o: especiales.cpp
+	$(CPP) -c especiales.cpp -o especiales.o $(CXXFLAGS)
+
+menu.o: menu.cpp
+	$(CPP) -c menu.cpp -o menu.o $(CXXFLAGS)
+
+orden.o: orden.cpp
+	$(CPP) -c orden.cpp -o orden.o $(CXXFLAGS)
+
+pedido.o: pedido.cpp
+	$(CPP) -c pedido.cpp -o pedido.o $(CXXFLAGS)
+
+pedidomesa.o: pedidomesa.cpp
+	$(CPP) -c pedidomesa.cpp -o pedidomesa.o $(CXXFLAGS)
+
+pedidodomicilio.o: pedidodomicilio.cpp
+	$(CPP) -c pedidodomicilio.cpp -o pedidodomicilio.o $(CXXFLAGS)
+
+cuenta.o: cuenta.cpp
+	$(CPP) -c cuenta.cpp -o cuenta.o $(CXXFLAGS)
+
+restaurante.o: restaurante.cpp
+	$(CPP) -c restaurante.cpp -o restaurante.o $(CXXFLAGS)

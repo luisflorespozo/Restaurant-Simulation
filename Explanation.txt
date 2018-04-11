@@ -1,0 +1,2 @@
+This program simulates the inventory of a restaurant, everything coming in is stored in a .txt file, then when an item is requested
+in the kitchen, it is verified in the data base if it is available or not.
